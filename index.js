@@ -1,7 +1,8 @@
-import express from 'express'
-import morgan from 'morgan'
-import cors from 'cors'
-import Routes from './router'
+const express =  require('express'),
+      morgan = require('morgan'),
+      cors = require('morgan'),
+      Routes = require('routes')
+
 const app = express()
 const port = process.env.PORT || 8088
 
@@ -13,7 +14,6 @@ app.use(morgan('dev'))
 Routes(app)
 
 //initiate the server
-
 app.listen(port, () => {
     console.log(`Congrats!! Server listening on port ${port}`)
 })
