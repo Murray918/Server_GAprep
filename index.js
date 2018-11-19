@@ -1,7 +1,7 @@
 import express from 'express'
 import morgan from 'morgan'
 import cors from 'cors'
-import Routes from './router'
+const router = require('./router').Routes
 
 const app = express()
 const port = process.env.PORT || '8080'
@@ -11,7 +11,7 @@ const port = process.env.PORT || '8080'
 app.use(cors())
 app.use(express())
 app.use(morgan('dev'))
-Routes(app)
+router(app)
 
 //initiate the server
 
